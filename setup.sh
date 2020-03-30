@@ -4,7 +4,7 @@ echo ":: Updating..."
 sudo apt update
 
 echo ":: Installing stuff..."
-sudo apt install -y curl git tmux zsh stack ruby-dev lua5.2-dev libncurses5-dev python3-dev python3 python3-venv python3-pip vim-nox
+sudo apt install -y curl git tmux zsh stack ruby-dev lua5.2-dev libncurses5-dev python3-dev python3 python3-venv python3-pip nvim
 
 echo ":: Cleaning up..."
 sudo apt -y autoremove
