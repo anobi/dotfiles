@@ -1,21 +1,17 @@
 #/usr/bin/env bash
 
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 575159689BEFB442
-echo 'deb http://download.fpcomplete.com/ubuntu xenial main'|sudo tee /etc/apt/sources.list.d/fpco.list
-
 echo ":: Updating..."
-sudo apt-get update
+sudo apt update
 
 echo ":: Installing stuff..."
-sudo apt-get install -y build-essential git tmux zsh stack ruby-dev lua5.2-dev libncurses5-dev python3-dev python3 python3-venv python3-pip vim-nox
+sudo apt install -y curl git tmux zsh stack ruby-dev lua5.2-dev libncurses5-dev python3-dev python3 python3-venv python3-pip vim-nox
 
 echo ":: Cleaning up..."
-sudo apt-get -y autoremove
+sudo apt -y autoremove
 
 echo ":: Files of dot and other configs"
 
-wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh 
-chsh -s /bin/zsh vagrant
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 git clone https://github.com/anobi/vim
 git clone https://github.com/anobi/dotfiles
