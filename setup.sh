@@ -4,7 +4,7 @@ echo ":: Updating..."
 sudo apt update
 
 echo ":: Installing stuff..."
-sudo apt install -y curl git tmux zsh stack ruby-dev lua5.2-dev libncurses5-dev python3-dev python3 python3-venv python3-pip nvim
+sudo apt install -y curl git tmux zsh stack ruby-dev lua5.2-dev libncurses5-dev python3-dev python3 python3-venv python3-pip nvim fonts-powerline
 
 echo ":: Cleaning up..."
 sudo apt -y autoremove
@@ -15,10 +15,6 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 git clone https://github.com/anobi/vim
 git clone https://github.com/anobi/dotfiles
-git clone https://github.com/powerline/fonts
-
-./fonts/install.sh
-rm -R fonts
 
 ln -s dotfiles/tmux/.tmux.conf ~/
 
